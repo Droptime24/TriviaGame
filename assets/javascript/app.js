@@ -1,3 +1,4 @@
+
 var myQuestions = [
     {
         question: "Which 90’s movie featured the Looney Tunes on its soundtrack?",
@@ -50,22 +51,37 @@ var myQuestions = [
         correctAnswer: 'b',
     },
 ];
-startGame()
 
-// load random question
-function startGame(onload) {
-
-    $("#questions").html(myQuestions[0].question)
+// generate random question
+function genNum(min, max) {
+    displayQuestion(Math.floor(Math.random() * (max - min) + (min)));
 };
-startGame()
-// start timer
+
+// Display question & answers to screen
+function displayQuestion(index) {
+    var question = myQuestions[index];
+    var answer = question[index];
+    $("#questions").text(question.question);
+    console.log(question);
+    for (var letter in question.answers) {
+        var answer = question.answers[letter];
+        $("#" + letter).text(answer);
+    }
+};
+
+// call answers in order
+
+
+
+// Display timer
 $("#timer").text("01:00")
 
+// Start timer 
 function count() {
     time--;
 
     // 
-    $("#timer").text(converted);
+    $("#timer").text(timeConverter(time));
 }
 function timeConverter(t) {
 
@@ -84,4 +100,5 @@ function timeConverter(t) {
     }
 
     return minutes + ":" + seconds;
-} 
+}
+genNum(0,5);
