@@ -52,34 +52,23 @@ var myQuestions = [
     },
 ];
 
-
-
-// generate random question
-// function genNum(min, max) {
-//     displayQuestion(Math.floor(Math.random() * (max - min) + (min)));
-// };
+// global variable (for loop part 1)
 var i = 0;
+
 // Display question & answers to screen
 function displayQuestion() {
+    // for loop paret 2
     if (i < myQuestions.length) {
         var question = myQuestions[i++];
-        var myQuestion = question.question;
-        console.log(myQuestion);
-        console.log(question.answers);
+        $("h3#questions.text-left").text(question.question) 
+         
     }
-    // var question = myQuestions[index];
-    // var answer = question[index];
-    // $("#questions").text(question.question);
-    // console.log(question);
-    // for (var letter in question.answers++) {
-    //     var answer = question.answers[letter];
-    //     $("#" + letter).text(answer);
-    // }
+    
 };
 
 // call answers in order
 
-
+                                                                                                                                                        
 
 // Display timer
 $("#timer").text("01:00")
