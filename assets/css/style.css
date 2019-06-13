@@ -1,4 +1,3 @@
-.bg-custome-background {
-    background: #000;
-   
+body.container.bg-custom {
+    background: url(assets/images/fancy-cushion.png);
 }
