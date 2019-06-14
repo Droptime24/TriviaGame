@@ -1,3 +1,15 @@
-body.container.bg-custom {
-    background: url(assets/images/fancy-cushion.png);
+/* Timmer display */
+body {
+    background: url("assets/images/neon-backgrond.jpeg");
+}
+
+#display {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+#title{
+    font-display: modak;
+    font-display: monospace;
+    font-size: 80px;
 }
