@@ -1,6 +1,7 @@
-
 var right = 0;
 var wrong = 0;
+
+
 
 // Game questions & answers
 var myQuestions = [
@@ -58,38 +59,72 @@ var myQuestions = [
         correctAnswer: 'Furby'
     }
 ];
-displayQuestion()
-
-//   start timer
-$("#start").on("click", start);
 
 // Display question & answers to screen
 function displayQuestion() {
+
     for (i = 0; i < myQuestions.length; i++) {
-        console.log(myQuestions[i].question);
-        $("#qustion").append(myQuestions[0].question);
+        // console.log(myQuestions[i].question);
+        $("#question" + i).html(myQuestions[i].question);
+        var answers = myQuestions[i].answers
+        for (j = 0; j < answers.length; j++) {
+            var newDiv = $('<div>');
+            var input = $('<input type="radio" name="answer' + i + '">');
+            newDiv.append(input);
+            newDiv.append(answers[j]);
+            $("#answers" + i).append(newDiv);
+        }
+    }
+}
 
-    };
+//   start timer
+$("#start").on("click", run);
 
-};
-displayQuestion()
-
-function start() {
-
+function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
-};
+    displayQuestion()
+}
+
+
+var intervalId;
+var timer = 60;
 
 function decrement() {
     timer--;
-    $("#timer").html("<h1>" + timer + "</h1>");
+    $("#timer").text(timer);
     if (timer === 0) {
         stop();
-        alert("Time Up!");
+        alert("You're not very good at this game...");
     }
-};
-
-// end game
-function stop() {
-    clearInterval(intervalId)
 }
+
+//  The stop function
+function stop() {
+    clearInterval(intervalId);
+}
+
+
+// function start() {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(decrement, 60000);
+//     $("#timer").append(intervalId);
+//     // get syntax for set interval and display it. 
+//     displayQuestion()
+// };
+
+
+// function decrement() {
+//     timer--;
+//     $("#timer").html("<h1>" + timer + "</h1>");
+//     if (timer === 0) {
+//         stop();
+//         alert("Time Up!");
+//     }
+// };
+
+// // // end game
+// // function stop() {
+// //     clearInterval(intervalId)
+// // };
+// // stop()
