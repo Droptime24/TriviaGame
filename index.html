@@ -23,38 +23,85 @@
     <div class="container">
       <h1 id="title">90s Trivia</h1>
     </div>
+    <div id="buttons" class="text-center">
+      <div class="text-center text-danger"><h1 id="timer">60</h1></div>
+      <br>
+      <button id="start">Start Game</button>
+    </div>
   </div>
 
-  <div id="timer" class="text-center"></div>
-  <div id="buttons" class="text-center">
-    <button id="start">Start</button>
-    <button id="reset">Reset</button>
+  
+
+  <!-- question 1 -->
+  <div class="my-4 ml-auto w-75 mx-auto">f
+    <div class="card text mb-4 mx-auto">
+      <div class="card-header bg-primary text-light c">
+        <h5  class="text-light" id="question1"></h5>
+      </div>
+
+      <!-- answers 1 -->
+      <div class="card card-body">
+        <form>
+          <h6>Pick the correct answer:</h6>
+          <input type="radio" name="gender" value="a"> <br>
+          <input type="radio" name="gender" value="b"> <br>
+          <input type="radio" name="gender" value="c"> <br>
+          <input type="radio" name="gender" value="d"> <br>
+        </form>
+      </div>
+    </div>
   </div>
-  <!-- questions -->
-  <!-- 1 -->
+
+  <!-- question 2 -->
   <div class="my-4 ml-auto w-75 mx-auto">
     <div class="card text mb-4 mx-auto">
       <div class="card-header bg-primary text-warning">
-        <h5 id="question"></h5>
+        <h5 id="question2"></h5>
       </div>
       <div class="card card-body">
-        <input type="radio" value="unchecked">
-        <label for="unchecked"></label>
-
+        <form>
+          <h6>Pick the correct answer:</h6>
+          <input type="radio" name="gender" value="a" checked> <br>
+          <input type="radio" name="gender" value="b"> <br>
+          <input type="radio" name="gender" value="c"> <br>
+          <input type="radio" name="gender" value="d"> <br>
+        </form>
       </div>
     </div>
+  </div>
+
+  <!-- question 3 -->
+  <div class="my-4 ml-auto w-75 mx-auto">
+    <div class="card text mb-4 mx-auto">
+      <div class="card-header bg-primary text-warning">
+        <h5 id="question33"></h5>
+      </div>
+      <div class="card card-body">
+        <form>
+          <h6>Pick the correct answer:</h6>
+          <input type="radio" name="gender" value="a" checked> <br>
+          <input type="radio" name="gender" value="b"> <br>
+          <input type="radio" name="gender" value="c"> <br>
+          <input type="radio" name="gender" value="d"> <br>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
-    <!-- jQuery first, then Popper.js, then JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <!-- Optional JavaScript -->
-    <script src="assets/javascript/app.js"></script>
-  </body>
-  </html>
+
+
+  <!-- jQuery first, then Popper.js, then JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
