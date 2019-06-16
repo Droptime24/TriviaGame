@@ -1,5 +1,5 @@
-var right = 0;
-var wrong = 0;
+var rightAnswers = 0;
+var wrongAnswers = 0;
 
 
 
@@ -57,14 +57,15 @@ var myQuestions = [
             'Nerf Guns',
             'Gameboy',],
         correctAnswer: 'Furby'
+        
     }
 ];
+console.log(myQuestions.correctAnswer)
 
 // Display question & answers to screen
 function displayQuestion() {
 
     for (i = 0; i < myQuestions.length; i++) {
-        // console.log(myQuestions[i].question);
         $("#question" + i).html(myQuestions[i].question);
         var answers = myQuestions[i].answers
         for (j = 0; j < answers.length; j++) {
@@ -86,7 +87,6 @@ function run() {
     displayQuestion()
 }
 
-
 var intervalId;
 var timer = 60;
 
@@ -95,36 +95,25 @@ function decrement() {
     $("#timer").text(timer);
     if (timer === 0) {
         stop();
-        alert("You're not very good at this game...");
+        alert("Times Up!!");
     }
 }
 
 //  The stop function
+$("#stop").on("click", stop);
+
 function stop() {
+
     clearInterval(intervalId);
 }
 
+// check answers and display right/wrong
 
-// function start() {
-//     clearInterval(intervalId);
-//     intervalId = setInterval(decrement, 60000);
-//     $("#timer").append(intervalId);
-//     // get syntax for set interval and display it. 
-//     displayQuestion()
-// };
-
-
-// function decrement() {
-//     timer--;
-//     $("#timer").html("<h1>" + timer + "</h1>");
-//     if (timer === 0) {
-//         stop();
-//         alert("Time Up!");
+// function submitAnswers() {
+   
+//     for (k = 0; k < myQuestions[i].correctAnswer.lenght; k++) {
+//         var correctAnswers = myQuestions[i].correctAnswer
+//         console.log(correctAnswers[k])
+       
 //     }
-// };
-
-// // // end game
-// // function stop() {
-// //     clearInterval(intervalId)
-// // };
-// // stop()
+// }
