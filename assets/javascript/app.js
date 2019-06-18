@@ -57,10 +57,10 @@ var myQuestions = [
             'Nerf Guns',
             'Gameboy',],
         correctAnswer: 'Furby'
-        
+
     }
 ];
-console.log(myQuestions.correctAnswer)
+console.log(myQuestions)
 
 // Display question & answers to screen
 function displayQuestion() {
@@ -73,7 +73,9 @@ function displayQuestion() {
             var input = $('<input type="radio" name="answer' + i + '">');
             newDiv.append(input);
             newDiv.append(answers[j]);
+
             $("#answers" + i).append(newDiv);
+            
         }
     }
 }
@@ -102,18 +104,19 @@ function decrement() {
 //  The stop function
 $("#stop").on("click", stop);
 
-function stop() {
+    function stop() {
+        // var selected = $("#answers").val($("input:checked"));
+        // var selected = $("input:checked");
+        // let question1 = $("input:radio[name=first-name]:checked").val();
+        // console.log(question1)
+        // for (var i = 0; i < selected.length; i++){
 
-    clearInterval(intervalId);
-}
+        
+        // }
+
+        clearInterval(intervalId);
+        // answers[j])
+    }
 
 // check answers and display right/wrong
 
-// function submitAnswers() {
-   
-//     for (k = 0; k < myQuestions[i].correctAnswer.lenght; k++) {
-//         var correctAnswers = myQuestions[i].correctAnswer
-//         console.log(correctAnswers[k])
-       
-//     }
-// }
