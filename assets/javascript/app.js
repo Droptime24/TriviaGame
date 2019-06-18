@@ -95,18 +95,21 @@ function decrement() {
 
 function checkAnswer(userSelected) {
     for (var i = 0; i < myQuestions.length; i++) {
-        var correct = myQuestions[i].correctAnswer;
-        console.log(correct)
 
-        if (userSelected[i] === correct) {
-            rightAnswers++;
-            console.log(rightAnswers);
-        } else {
-            wrongAnswers++;
-            console.log(wrongAnswers);
+        var correct = myQuestions[i].correctAnswer;
+        for (j = 0; j < correct.lenght; i++) {
+
+            if (userSelected[i] === correct[j]) {
+                rightAnswers++;
+                // console.log(rightAnswers);
+            } else {
+                wrongAnswers++;
+                // console.log(wrongAnswers);
+            }
+
         }
     }
-};
+}
 
 $('#stop').on('click', stop);
 function stop() {
@@ -117,11 +120,12 @@ function stop() {
     for (var i = 0; i < selected.length; i++) {
         // console.log(selected[i].nextSibling.nodeValue);
         var userSelected = selected[i].nextSibling.nodeValue;
-        console.log(userSelected);
+        
     }
-    checkAnswer(userSelected);
+    
 
     clearInterval(intervalId);
+    checkAnswer(userSelected[i]);
     // answers[j])
 }
 
