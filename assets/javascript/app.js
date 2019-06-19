@@ -1,5 +1,7 @@
 var rightAnswers = 0;
 var wrongAnswers = 0;
+var intervalId;
+var timer = 60;
 
 // Game questions & answers
 var myQuestions = [
@@ -58,9 +60,11 @@ var myQuestions = [
 
 // Display question & answers to screen
 function displayQuestion() {
+    
     for (i = 0; i < myQuestions.length; i++) {
         $('#question' + i).html(myQuestions[i].question);
         var answers = myQuestions[i].answers;
+        $('#answers' + i).empty();
         for (j = 0; j < answers.length; j++) {
             var newDiv = $('<div>');
             var input = $('<input type="radio" name="answer' + i + '">');
@@ -76,13 +80,17 @@ function displayQuestion() {
 $('#start').on('click', run);
 
 function run() {
+    rightAnswers = 0;
+    wrongAnswers = 0;
+    $('#right').html(rightAnswers);
+    $('#wrong').html(wrongAnswers);
     clearInterval(intervalId);
+    timer = 60;
     intervalId = setInterval(decrement, 1000);
     displayQuestion();
 }
 
-var intervalId;
-var timer = 60;
+
 
 function decrement() {
     timer--;
@@ -93,40 +101,31 @@ function decrement() {
     }
 };
 
-function checkAnswer(userSelected) {
-    for (var i = 0; i < myQuestions.length; i++) {
-
-        var correct = myQuestions[i].correctAnswer;
-        for (j = 0; j < correct.lenght; i++) {
-
-            if (userSelected[i] === correct[j]) {
-                rightAnswers++;
-                // console.log(rightAnswers);
-            } else {
-                wrongAnswers++;
-                // console.log(wrongAnswers);
-            }
-
-        }
-    }
-}
-
 $('#stop').on('click', stop);
+
 function stop() {
     // var selected = $("#answers").val($("input:checked"));
     var selected = $('input:checked');
-    //   console.log(selected);
-    //   console.log(selected[0].offsetParent.innerText);
-    for (var i = 0; i < selected.length; i++) {
-        // console.log(selected[i].nextSibling.nodeValue);
-        var userSelected = selected[i].nextSibling.nodeValue;
-        
-    }
-    
-
+    console.log(selected)
     clearInterval(intervalId);
-    checkAnswer(userSelected[i]);
-    // answers[j])
+
+    for (var i = 0; i < selected.length; i++) {
+
+        var userSelected = selected[i].nextSibling.nodeValue;
+        console.log(userSelected)
+        
+        if (userSelected === myQuestions[i].correctAnswer) {
+            rightAnswers++;
+            
+            // console.log(rightAnswers);
+        } else {
+            wrongAnswers++;
+            // console.log(wrongAnswers);
+        }
+
+    }
+    $('#right').html(rightAnswers);
+    $('#wrong').html(wrongAnswers);
 }
 
 // check answers and display right/wrong
